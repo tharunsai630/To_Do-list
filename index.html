@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>To-Do List App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+ </head>
+ <body>
+  <div class="backdrop"></div>
+  <header class="site-header">
+   <div class="container">
+    <div class="brand">
+     <span class="dot"></span>
+     <h1>To-Do List App</h1>
+    </div>
+    <button id="themeToggle" class="btn ghost" aria-label="Toggle theme">
+     <span class="icon" data-icon="sun" aria-hidden="true">☀️</span>
+     <span class="icon" data-icon="moon" aria-hidden="true">🌙</span>
+    </button>
+   </div>
+  </header>
+
+  <main class="main">
+   <section class="card container">
+    <div class="input-row">
+     <input id="taskInput" type="text" placeholder="Add a new task..." autocomplete="off" aria-label="Task title" />
+     <button id="addBtn" class="btn primary">Add</button>
+    </div>
+
+    <div class="controls">
+     <div class="filters" role="tablist" aria-label="Filters">
+      <button class="chip active" data-filter="all" role="tab" aria-selected="true">All</button>
+      <button class="chip" data-filter="active" role="tab" aria-selected="false">Pending</button>
+      <button class="chip" data-filter="completed" role="tab" aria-selected="false">Completed</button>
+     </div>
+     <div class="actions">
+      <button id="clearCompleted" class="btn ghost">Clear Completed</button>
+     </div>
+    </div>
+
+    <ul id="taskList" class="task-list" aria-live="polite"></ul>
+   </section>
+  </main>
+
+  <script src="app.js"></script>
+ </body>
+ </html>
